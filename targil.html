@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="kookie()">
+
+    <input type="text" id="tx" value="blue">
+    <input type="button" onclick="changecolor()"  value="swich color">
+
+<script>
+function changecolor() {
+var x=document.getElementById("tx").value;
+document.bgColor = x;
+var d = new Date();
+d.setTime(d.getTime()+ 1000*3600*24*30);
+document.cookie="color=" + x +";expires=" +d.toGMTString();
+}
+
+function kookie(){
+
+var savekookie=document.cookie.split("=");
+var y=savekookie[1];
+document.bgColor=y; 
+
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
